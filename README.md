@@ -4,7 +4,7 @@ A React Native library providing wallet context and WDK (Wallet Development Kit)
 
 ## Features
 
-- **Multi-chain Support**: Bitcoin, Ethereum, Polygon, Arbitrum, TON, Solana, and Tron
+- **Multi-chain Support**: Bitcoin, Ethereum, Polygon, Arbitrum, TON, Solana, Tron and Movement
 - **Multi-asset Management**: BTC, USDT, XAUT, and more
 - **Secure Seed Management**: Encrypted seed phrase storage using native keychain
 - **React Context API**: Easy-to-use wallet context provider and hooks

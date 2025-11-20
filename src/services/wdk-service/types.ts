@@ -13,6 +13,7 @@ export enum NetworkType {
   TON = 'ton',
   POLYGON = 'polygon',
   ARBITRUM = 'arbitrum',
+  MOVEMENT = 'movement',
 }
 
 export const AssetAddressMap = {
@@ -127,6 +128,15 @@ export interface TronChainConfig {
   paymasterToken: PaymasterToken;
 }
 
+export interface MovementChainConfig {
+  sdkConfig: {
+    network: string;
+    fullnode: string;
+    faucet?: string;
+  };
+  transferMaxFee?: number;
+}
+
 export interface ChainsConfig {
   ethereum?: EVMChainConfig;
   arbitrum?: EVMChainConfig;
@@ -134,4 +144,5 @@ export interface ChainsConfig {
   ton?: TONChainConfig;
   bitcoin?: BitcoinChainConfig;
   tron?: TronChainConfig;
+  movement?: MovementChainConfig;
 }

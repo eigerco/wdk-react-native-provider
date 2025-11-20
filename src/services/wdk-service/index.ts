@@ -53,6 +53,8 @@ const toNetwork = (n: NetworkType): string => {
       return 'solana';
     case NetworkType.TRON:
       return 'tron';
+    case NetworkType.MOVEMENT:
+      return 'movement';
     default:
       return 'bitcoin';
   }
