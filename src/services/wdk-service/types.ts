@@ -2,6 +2,7 @@ export enum AssetTicker {
   BTC = 'btc',
   USDT = 'usdt',
   XAUT = 'xaut',
+  MOVE = 'move',
 }
 
 export enum NetworkType {
@@ -25,10 +26,12 @@ export const AssetAddressMap = {
     [NetworkType.POLYGON]: 'polygon',
     [NetworkType.ARBITRUM]: 'arbitrum',
     [NetworkType.TON]: 'ton',
-    [NetworkType.MOVEMENT]: 'movement',
   },
   [AssetTicker.XAUT]: {
     [NetworkType.ETHEREUM]: 'ethereum',
+  },
+  [AssetTicker.MOVE]: {
+    [NetworkType.MOVEMENT]: 'movement',
   },
 };
 
@@ -41,10 +44,12 @@ export const AssetBalanceMap = {
     [NetworkType.POLYGON]: 'polygon',
     [NetworkType.ARBITRUM]: 'arbitrum',
     [NetworkType.TON]: 'ton',
-    [NetworkType.MOVEMENT]: 'movement',
   },
   [AssetTicker.XAUT]: {
     [NetworkType.ETHEREUM]: 'ethereum',
+  },
+  [AssetTicker.MOVE]: {
+    [NetworkType.MOVEMENT]: 'movement',
   },
 };
 

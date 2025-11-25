@@ -82,7 +82,7 @@ class WDKService {
   private secretManager: any | null = null;
   private config: WDKServiceConfig | undefined;
 
-  private constructor() {}
+  private constructor() { }
 
   static getInstance(): WDKService {
     if (!WDKService.instance) {
@@ -356,7 +356,7 @@ class WDKService {
       throw new Error('WDK Manager not initialized');
     }
 
-    if (network === NetworkType.SEGWIT) {
+    if (network === NetworkType.SEGWIT || network === NetworkType.MOVEMENT) {
       return await this.wdkManager.getAddress({
         network: toNetwork(network),
         accountIndex: index,
@@ -435,6 +435,21 @@ class WDKService {
         });
 
         return Number(quote.fee) / this.getDenominationValue(AssetTicker.BTC);
+      } else if (network === NetworkType.MOVEMENT) {
+        // Native MOVE coin transfer
+        const value = new Decimal(amount)
+          .mul(this.getDenominationValue(AssetTicker.MOVE))
+          .toNumber();
+        const quote = await this.wdkManager.quoteSendTransaction({
+          network: 'movement',
+          accountIndex: index,
+          options: {
+            to: recipientAddress,
+            value: value.toString(),
+          },
+        });
+
+        return Number(quote.fee) / this.getDenominationValue(AssetTicker.MOVE);
       } else if (
         [
           NetworkType.ETHEREUM,
@@ -555,6 +570,23 @@ class WDKService {
       });
 
       return response;
+    } else if (network === NetworkType.MOVEMENT) {
+      // Native MOVE coin transfer
+      const sendParams = {
+        to: recipientAddress,
+        value: new Decimal(amount)
+          .mul(this.getDenominationValue(AssetTicker.MOVE))
+          .round()
+          .toString(),
+      };
+
+      const response = await this.wdkManager.sendTransaction({
+        network: 'movement',
+        accountIndex: index,
+        options: sendParams,
+      });
+
+      return response;
     } else {
       throw new Error('Unsupported network');
     }
@@ -568,6 +600,8 @@ class WDKService {
         return 1000000;
       case AssetTicker.XAUT:
         return 1000000;
+      case AssetTicker.MOVE:
+        return 100000000;
       default:
         return 1000000;
     }
@@ -588,6 +622,7 @@ class WDKService {
       AssetTicker.BTC,
       AssetTicker.USDT,
       AssetTicker.XAUT,
+      AssetTicker.MOVE,
     ];
 
     const wallet: Wallet = {
