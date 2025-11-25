@@ -111,6 +111,9 @@
     "stream-browserify": "^3.0.0",
     "stream-http": "^3.2.0"
   },
+  "dependencies": {
+    "poseidon-lite": "file:./node_modules/@tetherto/pear-wrk-wdk/shims/poseidon-lite"
+  },
   "packageManager": "npm@10.9.0",
   "jest": {
     "preset": "react-native",
