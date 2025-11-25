@@ -112,10 +112,12 @@
     "stream-http": "^3.2.0"
   },
   "dependencies": {
-    "poseidon-lite": "file:./node_modules/@tetherto/pear-wrk-wdk/shims/poseidon-lite"
+    "poseidon-lite": "file:./node_modules/@tetherto/pear-wrk-wdk/shims/poseidon-lite",
+    "@aptos-labs/aptos-client": "file:./node_modules/@tetherto/pear-wrk-wdk/shims/aptos-client"
   },
   "overrides": {
-    "poseidon-lite": "$poseidon-lite"
+    "poseidon-lite": "$poseidon-lite",
+    "@aptos-labs/aptos-client": "$@aptos-labs/aptos-client"
   },
   "packageManager": "npm@10.9.0",
   "jest": {
