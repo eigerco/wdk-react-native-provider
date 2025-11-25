@@ -114,6 +114,9 @@
   "dependencies": {
     "poseidon-lite": "file:./node_modules/@tetherto/pear-wrk-wdk/shims/poseidon-lite"
   },
+  "overrides": {
+    "poseidon-lite": "$poseidon-lite"
+  },
   "packageManager": "npm@10.9.0",
   "jest": {
     "preset": "react-native",
