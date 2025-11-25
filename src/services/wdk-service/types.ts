@@ -25,6 +25,7 @@ export const AssetAddressMap = {
     [NetworkType.POLYGON]: 'polygon',
     [NetworkType.ARBITRUM]: 'arbitrum',
     [NetworkType.TON]: 'ton',
+    [NetworkType.MOVEMENT]: 'movement',
   },
   [AssetTicker.XAUT]: {
     [NetworkType.ETHEREUM]: 'ethereum',
@@ -40,6 +41,7 @@ export const AssetBalanceMap = {
     [NetworkType.POLYGON]: 'polygon',
     [NetworkType.ARBITRUM]: 'arbitrum',
     [NetworkType.TON]: 'ton',
+    [NetworkType.MOVEMENT]: 'movement',
   },
   [AssetTicker.XAUT]: {
     [NetworkType.ETHEREUM]: 'ethereum',
