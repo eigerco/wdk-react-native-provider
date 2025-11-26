@@ -84,7 +84,7 @@
   "peerDependencies": {
     "@craftzdog/react-native-buffer": "^6.1.0",
     "@react-native-async-storage/async-storage": "^2.2.0",
-    "@tetherto/pear-wrk-wdk": "github:eigerco/pear-wrk-wdk#c5a6af7c3fa8837d8a8dc29bf32701ed0f3c2372",
+    "@tetherto/pear-wrk-wdk": "github:eigerco/pear-wrk-wdk#1398b5a481fa0033505ea54d3cf55eb25c3ff016",
     "@tetherto/wdk-secret-manager": "^1.0.0-beta.3",
     "b4a": "^1.7.2",
     "bip39": "^3.1.0",
@@ -113,7 +113,8 @@
   },
   "dependencies": {
     "poseidon-lite": "file:./node_modules/@tetherto/pear-wrk-wdk/shims/poseidon-lite",
-    "@aptos-labs/aptos-client": "file:./node_modules/@tetherto/pear-wrk-wdk/shims/aptos-client"
+    "@aptos-labs/aptos-client": "file:./node_modules/@tetherto/pear-wrk-wdk/shims/aptos-client",
+    "aptos-client-upstream": "npm:@aptos-labs/aptos-client@^2.0.0"
   },
   "overrides": {
     "poseidon-lite": "$poseidon-lite",
