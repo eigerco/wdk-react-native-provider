@@ -93,7 +93,7 @@
   "peerDependencies": {
     "@craftzdog/react-native-buffer": "^6.1.0",
     "@react-native-async-storage/async-storage": "^2.2.0",
-    "@tetherto/pear-wrk-wdk": "github:eigerco/pear-wrk-wdk#1398b5a481fa0033505ea54d3cf55eb25c3ff016",
+    "@tetherto/pear-wrk-wdk": "github:eigerco/pear-wrk-wdk#7eec0a0fdf2783082f199905f3d78cbf252d372d",
     "@tetherto/wdk-secret-manager": "^1.0.0-beta.3",
     "b4a": "^1.7.2",
     "bip39": "^3.1.0",
