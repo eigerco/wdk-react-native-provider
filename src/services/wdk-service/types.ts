@@ -2,6 +2,7 @@ export enum AssetTicker {
   BTC = 'btc',
   USDT = 'usdt',
   XAUT = 'xaut',
+  MOVE = 'move',
 }
 
 export enum NetworkType {
@@ -13,6 +14,7 @@ export enum NetworkType {
   TON = 'ton',
   POLYGON = 'polygon',
   ARBITRUM = 'arbitrum',
+  MOVEMENT = 'movement',
 }
 
 export const AssetAddressMap = {
@@ -28,6 +30,9 @@ export const AssetAddressMap = {
   [AssetTicker.XAUT]: {
     [NetworkType.ETHEREUM]: 'ethereum',
   },
+  [AssetTicker.MOVE]: {
+    [NetworkType.MOVEMENT]: 'movement',
+  },
 };
 
 export const AssetBalanceMap = {
@@ -42,6 +47,9 @@ export const AssetBalanceMap = {
   },
   [AssetTicker.XAUT]: {
     [NetworkType.ETHEREUM]: 'ethereum',
+  },
+  [AssetTicker.MOVE]: {
+    [NetworkType.MOVEMENT]: 'movement',
   },
 };
 
@@ -127,6 +135,15 @@ export interface TronChainConfig {
   paymasterToken: PaymasterToken;
 }
 
+export interface MovementChainConfig {
+  sdkConfig: {
+    network: string;
+    fullnode: string;
+    faucet?: string;
+  };
+  transferMaxFee?: number;
+}
+
 export interface ChainsConfig {
   ethereum?: EVMChainConfig;
   arbitrum?: EVMChainConfig;
@@ -134,4 +151,5 @@ export interface ChainsConfig {
   ton?: TONChainConfig;
   bitcoin?: BitcoinChainConfig;
   tron?: TronChainConfig;
+  movement?: MovementChainConfig;
 }
